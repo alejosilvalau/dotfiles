@@ -8,6 +8,7 @@ include ~/.config/i3/theme.conf
 # General startup applications
 exec --no-startup-id picom
 exec_always --no-startup-id xrdb -merge ~/.Xresources
+exec --no-startup-id touchegg
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 exec --no-startup-id udiskie &
 

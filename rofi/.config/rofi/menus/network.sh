@@ -20,10 +20,10 @@ chosen=$(echo "$menu" | $ROFI \
 label=$(echo "$chosen" | cut -d: -f2-)
 case "$label" in
 *"WiFi"*)
-  ghostty -e wifitui
+  kitty -e wifitui
   ;;
 *"Bluetooth"*)
-  ghostty -e bluetui
+  kitty -e bluetui
   ;;
 *"Close"*)
   exit

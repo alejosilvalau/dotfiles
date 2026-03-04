@@ -33,7 +33,7 @@ case "$label" in
   flameshot gui
   ;;
 *"Music"*)
-  ghostty -e kew
+  kitty -e kew
   ;;
 *"Emoji"*)
   rofimoji --selector-args="-theme $THEME" --clipboarder xclip --action copy
@@ -42,7 +42,7 @@ case "$label" in
   ~/.config/rofi/menus/screen.sh
   ;;
 *"Audio"*)
-  ghostty -e pulsemixer
+  kitty -e pulsemixer
   ;;
 *"Network"*)
   ~/.config/rofi/menus/network.sh

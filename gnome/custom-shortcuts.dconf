@@ -16,8 +16,8 @@ name='Flameshot'
 
 [custom-keybindings/custom2]
 binding='<Shift><Alt>2'
-command='ghostty'
-name='New ghostty window'
+command='kitty'
+name='New kitty window'
 
 [custom-keybindings/custom3]
 binding='<Shift><Alt>1'

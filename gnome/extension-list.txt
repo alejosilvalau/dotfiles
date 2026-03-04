@@ -1,0 +1,15 @@
+blur-my-shell@aunetx
+undecorate@sun.wxg@gmail.com
+space-bar@luchrioh
+AlphabeticalAppGrid@stuarthayhurst
+focus-changer@heartmire
+tactile@lundal.io
+x11gestures@joseexposito.github.io
+emoji-copy@felipeftn
+gpu-switcher-supergfxctl@chikobara.github.io
+Vitals@CoreCoding.com
+panel-date-format@keiii.github.com
+ding@rastersoft.com
+tiling-assistant@ubuntu.com
+ubuntu-appindicators@ubuntu.com
+ubuntu-dock@ubuntu.com

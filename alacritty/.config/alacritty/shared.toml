@@ -1,0 +1,28 @@
+[env]
+TERM = "xterm-256color"
+
+[shell]
+program = "zellij"
+
+[window]
+padding.x = 16
+padding.y = 14
+decorations = "None"
+opacity = 0.98
+
+[keyboard]
+bindings = [
+  { key = "F11", action = "ToggleFullscreen" },
+  { key = "PageUp", mods = "Shift", action = "ScrollPageUp" },
+  { key = "PageUp", action = "ScrollLineUp" },
+  { key = "ArrowUp", mods = "Shift", action = "ScrollPageUp" },
+  { key = "ArrowUp", action = "ScrollLineUp" },
+  { key = "PageDown", mods = "Shift", action = "ScrollPageDown" },
+  { key = "PageDown", action = "ScrollLineDown" },
+  { key = "ArrowDown", mods = "Shift", action = "ScrollPageDown" },
+  { key = "ArrowDown", action = "ScrollLineDown" }
+]
+
+[scrolling]
+history = 10000
+multiplier = 3

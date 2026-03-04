@@ -1,0 +1,42 @@
+{
+    "1a7c28ca-3a34-4c37-9030-4988518b65ae": {
+        "id": "1a7c28ca-3a34-4c37-9030-4988518b65ae",
+        "name": "Google Search",
+        "keyword": "g",
+        "cmd": "https://google.com/search?q=%s",
+        "icon": "/usr/share/ulauncher/media/google-search-icon.png",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1759949629.3667984
+    },
+    "09815c65-3672-411b-8f11-64017ddce324": {
+        "id": "09815c65-3672-411b-8f11-64017ddce324",
+        "name": "Stack Overflow",
+        "keyword": "so",
+        "cmd": "https://stackoverflow.com/search?q=%s",
+        "icon": "/usr/share/ulauncher/media/stackoverflow-icon.svg",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1759949629.3668134
+    },
+    "7a1c62f2-42b0-4150-808e-5d0be824df18": {
+        "id": "7a1c62f2-42b0-4150-808e-5d0be824df18",
+        "name": "Wikipedia",
+        "keyword": "wiki",
+        "cmd": "https://en.wikipedia.org/wiki/%s",
+        "icon": "/usr/share/ulauncher/media/wikipedia-icon.png",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1759949629.3668249
+    },
+    "e110a38d-dfc7-4a60-a941-ad464fb74ea3": {
+        "id": "e110a38d-dfc7-4a60-a941-ad464fb74ea3",
+        "name": "GPU Run",
+        "keyword": "gpu",
+        "cmd": "#!/bin/bash\n\n# 1. Capture the application name passed from Ulauncher (%s)\nAPP_NAME=\"$1\"\n\n# 2. Execute the command using 'prime-run' and detach it from the shell\n# 'nohup' prevents the command from dying when the parent shell (Ulauncher's executor) exits.\n# '>' sends standard output and error to /dev/null, silencing the command.\n# '&' runs the command in the background.\nnohup gpu-run \"$APP_NAME\" > /dev/null 2>&1 &",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1761760761.4562266
+    }
+}

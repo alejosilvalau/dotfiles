@@ -1,0 +1,15 @@
+set $mod Mod4
+set $alt Mod1
+
+include ~/.config/i3/keymaps.conf
+include ~/.config/i3/workspaces.conf
+include ~/.config/i3/theme.conf
+
+# General startup applications
+exec --no-startup-id picom
+exec_always --no-startup-id xrdb -merge ~/.Xresources
+exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
+exec --no-startup-id udiskie &
+
+# Default cursor speed
+exec_always --no-startup-id xset r rate 175 75

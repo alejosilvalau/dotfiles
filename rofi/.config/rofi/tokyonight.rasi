@@ -1,0 +1,97 @@
+/* Tokyo Night - Rofi Theme */
+
+* {
+    bg:          #1a1b26;
+    bg-alt:      #24283b;
+    bg-select:   #364a82;
+    fg:          #c0caf5;
+    fg-dim:      #565f89;
+    accent:      #7aa2f7;
+    urgent:      #f7768e;
+    green:       #9ece6a;
+    yellow:      #e0af68;
+    mauve:       #bb9af7;
+
+    font:                "CaskaydiaMono NFM 14";
+    background-color:    transparent;
+    text-color:          @fg;
+}
+
+window {
+    background-color:    @bg;
+    border:              2px solid;
+    border-color:        @accent;
+    width:               520px;
+    padding:             12px;
+}
+
+mainbox {
+    background-color:    transparent;
+    children:            [ inputbar, message, listview ];
+    spacing:             8px;
+}
+
+inputbar {
+    background-color:    @bg-alt;
+    padding:             10px 14px;
+    spacing:             10px;
+    children:            [ prompt, entry ];
+}
+
+prompt {
+    background-color:    transparent;
+    text-color:          @accent;
+    font:                "CaskaydiaMono NFM 14";
+}
+
+entry {
+    background-color:    transparent;
+    text-color:          @fg;
+    placeholder:         "...";
+    placeholder-color:   @fg-dim;
+}
+
+message {
+    background-color:    transparent;
+    padding:             4px 0px;
+}
+
+textbox {
+    background-color:    transparent;
+    text-color:          @fg-dim;
+    font:                "CaskaydiaMono NFM 14";
+}
+
+listview {
+    background-color:    transparent;
+    columns:             1;
+    lines:               10;
+    scrollbar:           false;
+    spacing:             2px;
+    fixed-height:        false;
+}
+
+element {
+    background-color:    transparent;
+    padding:             8px 12px;
+    spacing:             12px;
+    orientation:         horizontal;
+    children:            [ element-icon, element-text ];
+}
+
+element selected {
+    background-color:    @bg-select;
+    text-color:          @fg;
+}
+
+element-icon {
+    background-color:    transparent;
+    size:                1.2em;
+}
+
+element-text {
+    background-color:    transparent;
+    text-color:          inherit;
+    highlight:           bold #7aa2f7;
+    vertical-align:      0.5;
+}

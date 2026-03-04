@@ -1,0 +1,7 @@
+configuration {
+    click-to-exit: false;
+    mouse-selector: true;
+    hover-select: true;
+    me-select-entry: "";
+    me-accept-entry: "MousePrimary";
+}

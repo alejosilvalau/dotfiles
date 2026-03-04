@@ -60,7 +60,7 @@ for group in "${groups[@]}"; do
     echo "bindsym $mod+$kb workspace $ws" >>"$OUTPUT"
 
     # 3. Keybind to move container to workspace
-    echo "bindsym $mod+Shift+$kb move container to workspace $ws" >>"$OUTPUT"
+    echo "bindsym $mod+Shift+$kb move container to workspace $ws; workspace $ws" >>"$OUTPUT"
 
     echo "" >>"$OUTPUT"
   done
@@ -68,6 +68,6 @@ for group in "${groups[@]}"; do
   ws_zero=$((offset + 10))
   echo "workspace \"$ws_zero\" output $target" >>"$OUTPUT"
   echo "bindsym $mod+0 workspace $ws_zero" >>"$OUTPUT"
-  echo "bindsym $mod+Shift+0 move container to workspace $ws_zero" >>"$OUTPUT"
+  echo "bindsym $mod+Shift+0 move container to workspace $ws_zero; workspace $ws_zero" >>"$OUTPUT"
   echo "" >>"$OUTPUT"
 done

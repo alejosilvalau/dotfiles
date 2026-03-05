@@ -31,3 +31,5 @@ if [[ $- == *i* ]]; then
   bind "set show-all-if-ambiguous on"
   bind 'TAB: menu-complete'
 fi
+
+alias nzf='selected=$(fzf); [ -n "$selected" ] && nvim "$selected"'

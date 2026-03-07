@@ -1,12 +1,9 @@
 #!/bin/bash
-
 killall -q polybar
 while pgrep -u $UID -x polybar; do sleep 1; done
 
-if type "xrandr"; then
-  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    MONITOR=$m polybar --reload toph &
-  done
-else
-  polybar --reload toph &
-fi
+polybar toph-primary &
+
+for m in $(polybar --list-monitors | grep -v "eDP" | cut -d":" -f1); do
+  MONITOR=$m polybar toph-secondary &
+done

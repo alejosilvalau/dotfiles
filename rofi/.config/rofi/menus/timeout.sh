@@ -51,4 +51,4 @@ else
 fi
 
 msg="${mins:+Screen will turn off in $mins minutes}"
-notify-send "󰌾 Screen Timeout Changed" "${msg:-Timeout disabled}"
+notify-send "󰌾 Screen Timeout Changed" "${msg:-Timeout has been disabled}"

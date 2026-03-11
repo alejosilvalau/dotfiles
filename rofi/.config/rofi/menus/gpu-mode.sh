@@ -34,7 +34,7 @@ supergfxctl --mode $label
 
 notify-send -u critical -t 30000 \
   "󰍺 GPU Mode Changed" \
-  "Switching to $label mode, the system will reboot in 15 seconds."
+  "Switching to $label mode, the system will reboot in 15 seconds"
 
 sleep 15
 touch /tmp/reboot-on-logout

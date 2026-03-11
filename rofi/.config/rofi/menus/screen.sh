@@ -1,5 +1,5 @@
 #!/bin/bash
-# ~/.config/rofi/menus/audio.sh
+# ~/.config/rofi/menus/screen.sh
 THEME="$HOME/.config/rofi/tokyonight.rasi"
 ROFI="rofi -dmenu -i -theme $THEME"
 
@@ -7,6 +7,7 @@ options=(
   "󰃞  Brightness"
   "󰘚  GPU Mode"
   "󰍹  Refresh Rate"
+  "󰌾  Timeout"
   "󰅙  Close"
 )
 
@@ -21,13 +22,16 @@ chosen=$(echo "$menu" | $ROFI \
 label=$(echo "$chosen" | cut -d: -f2-)
 case "$label" in
 *"Brightness"*)
-  ~/.config/rofi/menus/screen-brightness.sh
+  ~/.config/rofi/menus/brightness.sh
   ;;
 *"GPU Mode"*)
   ~/.config/rofi/menus/gpu-mode.sh
   ;;
 *"Refresh Rate"*)
   ~/.config/rofi/menus/refresh-rate.sh
+  ;;
+*"Timeout"*)
+  ~/.config/rofi/menus/timeout.sh
   ;;
 *"Close"*)
   exit

@@ -1,5 +1,5 @@
 #!/bin/bash
-# ~/.config/rofi/menus/screen-brightness.sh
+# ~/.config/rofi/menus/brightness.sh
 # Uses brightnessctl for laptop screen only
 
 THEME="$HOME/.config/rofi/tokyonight.rasi"

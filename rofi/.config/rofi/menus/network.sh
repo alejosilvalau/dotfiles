@@ -1,5 +1,5 @@
 #!/bin/bash
-# ~/.config/rofi/menus/audio.sh
+# ~/.config/rofi/menus/network.sh
 THEME="$HOME/.config/rofi/tokyonight.rasi"
 ROFI="rofi -dmenu -i -theme $THEME"
 

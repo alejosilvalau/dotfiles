@@ -7,4 +7,4 @@ betterlockscreen -u ~/Pictures/Backgrounds/rebranding-alnixdev-v4.png
 
 betterlockscreen -l
 
-xset dpms 600 600 600
+xset dpms 500 500 500

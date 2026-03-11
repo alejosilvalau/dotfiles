@@ -3,9 +3,7 @@
 THEME="$HOME/.config/rofi/tokyonight.rasi"
 ROFI="rofi -dmenu -i -theme $THEME"
 
-xset_q=$(xset q)
-current=$(echo "$xset_q" | grep -oP 'Standby: \K\d+')
-dpms=$(echo "$xset_q" | grep -oP 'DPMS is \K\w+')
+current=$(xset q | grep -oP 'Standby: \K\d+')
 
 options=(
   "󰌾  10 minutes"
@@ -18,18 +16,16 @@ options=(
 menu=$(printf '%s\n' "${options[@]}" | while read -r label; do
   if [[ "$label" == *"Close"* ]]; then
     echo "$label"
-  elif [[ "$label" == *"Disabled"* ]]; then
-    [[ "$dpms" == "Disabled" ]] && echo "$label  ◀ current" || echo "$label"
-  else
-    # This part only runs for the timed options
-    mins=$(echo "$label" | grep -oP '\d+')
-    secs=$((${mins:-0} * 60))
+    continue
+  fi
 
-    if [[ "$dpms" == "Enabled" && "$secs" -eq "$current" ]]; then
-      echo "$label  ◀ current"
-    else
-      echo "$label"
-    fi
+  mins=$(echo "$label" | grep -oP '\d+')
+  secs=$((${mins:-0} * 60))
+
+  if [ $secs -eq $current ]; then
+    echo "$label  ◀ current"
+  else
+    echo "$label"
   fi
 done)
 
@@ -43,12 +39,7 @@ chosen=$(echo "$menu" | $ROFI \
 mins=$(echo "$chosen" | grep -oP '\d+')
 secs=$((${mins:-0} * 60))
 
-if [ $secs -eq 0 ]; then
-  xset -dpms
-else
-  xset +dpms
-  xset dpms $secs $secs $secs
-fi
+xset dpms "$secs" "$secs" "$secs"
 
 msg="${mins:+Screen will turn off in $mins minutes}"
 notify-send "󰌾 Screen Timeout Changed" "${msg:-Timeout has been disabled}"

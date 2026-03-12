@@ -32,8 +32,25 @@ if [[ $- == *i* ]]; then
   bind 'TAB: menu-complete'
 fi
 
-# Tmux-sessionizer
+# Tmux-sessionizer aliases
+# Direct project jumps
+alias tsA="tmux-sessionizer \"/media/$USER/Int. Media/AlnixDev/Projects\""
+alias tsJ="tmux-sessionizer \"/media/$USER/Int. Media/Job\""
+alias tsD="tmux-sessionizer \"$HOME/Desktop/Job\""
+alias tsS="tmux-sessionizer \"$HOME/dotfiles\""
+alias tsN="tmux-sessionizer \"$HOME/.config/nvim\""
+
+# Direct vault jumps
+alias tsV="tmux-sessionizer \"/media/$USER/Archive/AlnixDev/vault-alnix404\""
+alias tsB="tmux-sessionizer \"/media/$USER/Archive/AlnixDev/vault-alnixdev\""
+alias tsU="tmux-sessionizer \"/media/$USER/Archive/Job/vault-university\""
+alias tsP="tmux-sessionizer \"/media/$USER/Archive/Personal/vault-personal\""
+alias tsE="tmux-sessionizer \"$HOME/Desktop/vault-desktop\""
+
+# Fuzzy search
 alias ts="tmux-sessionizer"
+
+# Session number jumps
 alias ts0="tmux-sessionizer -s 0"
 alias ts1="tmux-sessionizer -s 1"
 alias ts2="tmux-sessionizer -s 2"

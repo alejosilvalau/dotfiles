@@ -49,12 +49,3 @@ alias tsE="tmux-sessionizer \"$HOME/Desktop/vault-desktop\""
 
 # Fuzzy search
 alias ts="tmux-sessionizer"
-
-# Session number jumps
-alias ts0="tmux-sessionizer -s 0"
-alias ts1="tmux-sessionizer -s 1"
-alias ts2="tmux-sessionizer -s 2"
-alias ts3="tmux-sessionizer -s 3"
-alias ts4="tmux-sessionizer -s 4"
-alias ts5="tmux-sessionizer -s 5"
-alias ts6="tmux-sessionizer -s 6"

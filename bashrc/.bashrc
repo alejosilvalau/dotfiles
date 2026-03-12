@@ -32,4 +32,12 @@ if [[ $- == *i* ]]; then
   bind 'TAB: menu-complete'
 fi
 
-alias nzf='selected=$(fzf); [ -n "$selected" ] && nvim "$selected"'
+# Tmux-sessionizer
+alias ts="tmux-sessionizer"
+alias ts0="tmux-sessionizer -s 0"
+alias ts1="tmux-sessionizer -s 1"
+alias ts2="tmux-sessionizer -s 2"
+alias ts3="tmux-sessionizer -s 3"
+alias ts4="tmux-sessionizer -s 4"
+alias ts5="tmux-sessionizer -s 5"
+alias ts6="tmux-sessionizer -s 6"

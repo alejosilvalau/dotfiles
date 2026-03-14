@@ -5,8 +5,7 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
-file_name=$(echo "$1" | tr ' ' '-')
-formatted_file_name=NOTE_$(date "+%Y%m%d")_${file_name}.md
+file_name=$(echo "$1" | tr ' ' '-').md
 cd "$HOME/Desktop/vault-desktop" || exit
-touch "${formatted_file_name}"
-nvim "${formatted_file_name}"
+touch "${file_name}"
+nvim "${file_name}"

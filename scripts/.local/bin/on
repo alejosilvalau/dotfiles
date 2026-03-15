@@ -6,6 +6,15 @@ if [ -z "$1" ]; then
 fi
 
 file_name=$(echo "$1" | tr ' ' '-').md
-cd "$HOME/Desktop/vault-desktop" || exit
+vault_path="$HOME/Desktop/vault-desktop"
+cd "$vault_path" || exit
 touch "${file_name}"
-nvim "${file_name}"
+
+# Create session detached if it doesn't exist yet
+tmux new-session -d -s "vault-desktop" -c "$vault_path" 2>/dev/null
+
+# Now send nvim command before attaching
+tmux send-keys -t "vault-desktop" "nvim $vault_path/${file_name}" C-m
+
+# Finally attach
+tmux attach-session -t "vault-desktop"

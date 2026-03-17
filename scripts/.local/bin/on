@@ -5,7 +5,7 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
-file_name=$(echo "$1" | tr ' ' '-').md
+file_name=NOTE_$(date "+%Y%m%d")_$(echo "$1" | tr ' ' '-').md
 vault_path="$HOME/Desktop/vault-desktop"
 cd "$vault_path" || exit
 touch "${file_name}"

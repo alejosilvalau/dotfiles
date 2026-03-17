@@ -1,5 +1,0 @@
-#!/bin/bash
-# ~/.tmux/clean-resurrect.sh
-
-cd ~/.local/share/tmux/resurrect || exit
-ls -t tmux_resurrect_*.txt | tail -n +6 | xargs -r rm

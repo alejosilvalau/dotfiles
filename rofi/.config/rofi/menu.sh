@@ -33,7 +33,7 @@ case "$label" in
   flameshot gui
   ;;
 *"Music"*)
-  kitty -e kew
+  kitty -e termusic
   ;;
 *"Emoji"*)
   rofimoji --selector-args="-theme $THEME" --clipboarder xclip --action copy

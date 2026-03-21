@@ -1,0 +1,5 @@
+music_dir = ["/media/alejosilvalau/Archive/Background Music"]
+
+loop_mode = "playlist"
+volume = 70
+speed = 10  # playback speed, 10 = normal

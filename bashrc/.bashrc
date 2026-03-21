@@ -3,6 +3,8 @@ source ~/.local/share/omakub/defaults/bash/rc
 # Editor used by CLI
 export EDITOR="nvim"
 export SUDO_EDITOR="$EDITOR"
+
+export PATH="$HOME/.cargo/bin:$PATH"
 . "$HOME/.cargo/env"
 
 export NVM_DIR="$HOME/.nvm"

@@ -1,1 +1,16 @@
-{"plugins": ["@prettier/plugin-xml"]}
+{
+  "plugins": ["/home/alejosilvalau/.local/share/nvim/mason/packages/prettier/node_modules/@prettier/plugin-xml/src/plugin.js"],
+  "printWidth": 80,
+  "tabWidth": 4,
+  "useTabs": false,
+  "xmlSelfClosingSpace": true,
+  "xmlWhitespaceSensitivity": "ignore",
+  "overrides": [
+    {
+      "files": "*.xml",
+      "options": {
+        "parser": "xml"
+      }
+    }
+  ]
+}

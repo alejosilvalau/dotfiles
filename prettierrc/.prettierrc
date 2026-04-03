@@ -7,7 +7,7 @@
   "xmlWhitespaceSensitivity": "ignore",
   "overrides": [
     {
-      "files": "*.xml",
+      "files": ["*.xml", "*.pom"],
       "options": {
         "parser": "xml"
       }

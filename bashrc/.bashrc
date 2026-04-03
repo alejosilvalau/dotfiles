@@ -18,6 +18,11 @@ case ":$PATH:" in
 *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+#
+
+export NODE_PATH="$PNPM_HOME/global/5/node_modules:$NODE_PATH"
+
+export PRETTIERD_DEFAULT_CONFIG="$HOME/.prettierrc"
 
 # This preserves the Omakub arrow but adds the Blue Path (\w) before it
 # \[\033[01;34m\] makes the path blue

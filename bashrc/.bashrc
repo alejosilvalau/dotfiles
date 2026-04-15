@@ -56,3 +56,6 @@ alias tsE="tmux-sessionizer \"$HOME/Desktop/vault-desktop\""
 
 # Fuzzy search
 alias ts="tmux-sessionizer"
+
+# SQL Server tools
+export PATH="$PATH:/opt/mssql-tools18/bin"

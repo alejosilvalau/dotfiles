@@ -59,3 +59,8 @@ alias ts="tmux-sessionizer"
 
 # SQL Server tools
 export PATH="$PATH:/opt/mssql-tools18/bin"
+
+# Auto-activate venv if it exists in the current dir
+if [ -d "venv" ]; then
+  source venv/bin/activate
+fi

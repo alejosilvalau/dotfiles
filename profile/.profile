@@ -40,6 +40,7 @@ case ":$PATH:" in
 *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
-export QT_STYLE_OVERRIDE=gtk2
-export QT_QPA_PLATFORMTHEME=gtk2
+# set it up to gtk2 when changing virtual box to qemu
+export QT_STYLE_OVERRIDE=fusion
+export QT_QPA_PLATFORMTHEME=fusion
 export ADW_DEBUG_COLOR_SCHEME=prefer-dark

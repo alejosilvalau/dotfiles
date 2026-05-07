@@ -71,4 +71,4 @@ window-padding-x = 8
 window-padding-y = 8
 window-step-resize = true
 
-term = xterm-256color
+# term = xterm-256color

@@ -1,0 +1,42 @@
+name: olivenders-v2
+
+services:
+  backend:
+    build:
+      context: ~/Desktop/Job/olivenders-project-v2/olivenders-backend-v2
+    container_name: olivenders-backend-v2
+    ports:
+      - "3000:3000"
+    develop:
+      watch:
+        - action: sync
+          path: ~/Desktop/Job/olivenders-project-v2/olivenders-backend-v2
+          target: /usr/src/app
+          ignore:
+            - node_modules/
+            - .git/
+            - package-lock.json
+            - pnpm-lock.yaml
+        - action: rebuild
+          path: ~/Desktop/Job/olivenders-project-v2/olivenders-backend-v2/package.json
+
+  frontend:
+    build:
+      context: ~/Desktop/Job/olivenders-project-v2/olivenders-frontend-v2
+    container_name: olivenders-frontend-v2
+    ports:
+      - "4200:4200"
+    depends_on:
+      - backend
+    develop:
+      watch:
+        - action: sync
+          path: ~/Desktop/Job/olivenders-project-v2/olivenders-frontend-v2
+          target: /usr/src/app
+          ignore:
+            - node_modules/
+            - .git/
+            - package-lock.json
+            - pnpm-lock.yaml
+        - action: rebuild
+          path: ~/Desktop/Job/olivenders-project-v2/olivenders-frontend-v2/package.json

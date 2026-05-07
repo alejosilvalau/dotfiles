@@ -1,7 +1,8 @@
 import os
-from urllib.parse import unquote
-from gi.repository import Nautilus, GObject
 from typing import List
+from urllib.parse import unquote
+
+from gi.repository import GObject, Nautilus
 
 
 class OpenTerminalExtension(GObject.GObject, Nautilus.MenuProvider):
@@ -9,7 +10,7 @@ class OpenTerminalExtension(GObject.GObject, Nautilus.MenuProvider):
         filename = unquote(file.get_uri()[7:])
 
         os.chdir(filename)
-        os.system(f"kitty --working-directory='{filename}' &")
+        os.system(f"ghostty --working-directory='{filename}' &")
 
     def menu_activate_cb(
         self,
@@ -38,8 +39,8 @@ class OpenTerminalExtension(GObject.GObject, Nautilus.MenuProvider):
 
         item = Nautilus.MenuItem(
             name="NautilusPython::openterminal_file_item",
-            label="Open in Kitty",
-            tip="Open Kitty In %s" % file.get_name(),
+            label="Open in Ghostty",
+            tip="Open Ghostty In %s" % file.get_name(),
         )
         item.connect("activate", self.menu_activate_cb, file)
 
@@ -53,8 +54,8 @@ class OpenTerminalExtension(GObject.GObject, Nautilus.MenuProvider):
     ) -> List[Nautilus.MenuItem]:
         item = Nautilus.MenuItem(
             name="NautilusPython::openterminal_file_item2",
-            label="Open in Kitty",
-            tip="Open Kitty In %s" % current_folder.get_name(),
+            label="Open in Ghostty",
+            tip="Open Ghostty In %s" % current_folder.get_name(),
         )
         item.connect("activate", self.menu_background_activate_cb, current_folder)
 

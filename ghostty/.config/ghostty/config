@@ -64,3 +64,5 @@ font-size = 12
 # padding and spacing
 window-padding-x = 8
 window-padding-y = 8
+
+term = xterm-256color

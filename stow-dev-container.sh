@@ -20,7 +20,7 @@ echo "🔗 Stowing packages..."
 for package in "${PACKAGES[@]}"; do
   if [ -d "$package" ]; then
     echo "  ✓ Stowing $package"
-    stow --adpot "$package"
+    stow --adopt "$package"
   else
     echo "  ✗ Warning: $package not found, skipping"
   fi

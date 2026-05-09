@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-ENVIRONMENT=${1:-"python"}
+ENVIRONMENT=${1:-"home"}
 
 # Install dependencies
 # nodejs python3-pip npm

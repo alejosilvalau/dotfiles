@@ -40,6 +40,10 @@ case ":$PATH:" in
 *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
+
 # set it up to gtk2 when changing virtual box to qemu
 export QT_STYLE_OVERRIDE=fusion
 export QT_QPA_PLATFORMTHEME=fusion

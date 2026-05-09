@@ -39,6 +39,26 @@ if [[ $- == *i* ]]; then
   bind 'TAB: menu-complete'
 fi
 
+# SQL Server tools
+export PATH="$PATH:/opt/mssql-tools18/bin"
+
+# Auto-activate .venv when entering a directory
+auto_activate_venv() {
+  if [ -d ".venv" ]; then
+    source .venv/bin/activate
+  elif [ -d "venv" ]; then
+    source venv/bin/activate
+  elif [ -n "$VIRTUAL_ENV" ]; then
+    deactivate
+  fi
+}
+PROMPT_COMMAND="auto_activate_venv;$PROMPT_COMMAND"
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
+eval "$(pyenv virtualenv-init -)"
+
 # Tmux-sessionizer aliases
 # Direct project jumps
 alias tsA="tmux-sessionizer \"/media/$USER/Int. Media/AlnixDev/Projects\""
@@ -56,11 +76,3 @@ alias tsE="tmux-sessionizer \"$HOME/Desktop/vault-desktop\""
 
 # Fuzzy search
 alias ts="tmux-sessionizer"
-
-# SQL Server tools
-export PATH="$PATH:/opt/mssql-tools18/bin"
-
-# Auto-activate venv if it exists in the current dir
-if [ -d "venv" ]; then
-  source venv/bin/activate
-fi

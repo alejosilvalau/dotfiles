@@ -42,18 +42,6 @@ fi
 # SQL Server tools
 export PATH="$PATH:/opt/mssql-tools18/bin"
 
-# Auto-activate .venv when entering a directory
-auto_activate_venv() {
-  if [ -d ".venv" ]; then
-    source .venv/bin/activate
-  elif [ -d "venv" ]; then
-    source venv/bin/activate
-  elif [ -n "$VIRTUAL_ENV" ]; then
-    deactivate
-  fi
-}
-PROMPT_COMMAND="auto_activate_venv;$PROMPT_COMMAND"
-
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - bash)"

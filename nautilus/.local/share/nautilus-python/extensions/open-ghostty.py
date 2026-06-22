@@ -1,4 +1,5 @@
 import os
+import shlex
 from typing import List
 from urllib.parse import unquote
 
@@ -8,9 +9,7 @@ from gi.repository import GObject, Nautilus
 class OpenTerminalExtension(GObject.GObject, Nautilus.MenuProvider):
     def _open_terminal(self, file: Nautilus.FileInfo) -> None:
         filename = unquote(file.get_uri()[7:])
-
-        os.chdir(filename)
-        os.system(f"ghostty --working-directory='{filename}' &")
+        os.system(f"ghostty --working-directory={shlex.quote(filename)} &")
 
     def menu_activate_cb(
         self,

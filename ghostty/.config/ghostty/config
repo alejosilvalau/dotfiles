@@ -55,7 +55,7 @@ confirm-close-surface = true
 window-decoration = false
 fullscreen = true
 maximize = true
-gtk-single-instance = true
+gtk-single-instance = false
 
 # font rendering
 font-family = "CaskaydiaMono Nerd Font Mono"

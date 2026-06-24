@@ -15,5 +15,8 @@ exec --no-startup-id udiskie &
 # Default cursor speed
 exec_always --no-startup-id xset r rate 175 75
 
-# Start gnome-keyring-daemon for secrets management
-exec --no-startup-id gnome-keyring-daemon --start --components=secrets
+# Start GNOME Keyring daemon
+exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
+
+# Start a polkit agent (Crucial for letting i3 prompt you for passwords)
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1

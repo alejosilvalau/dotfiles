@@ -32,4 +32,4 @@ echo "$chosen" | grep -q "Close" && exit
 rate=$(echo "$chosen" | grep -oP '\d+(?= Hz)')
 
 xrandr --output eDP --mode 1920x1080 --rate "$rate"
-notify-send "󰍹  Refresh rate set to $rate Hz"
+notify-send "󰍹 Refresh Rate Set To $rate Hz"

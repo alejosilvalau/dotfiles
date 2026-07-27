@@ -45,7 +45,8 @@ if [ "$current" = "Hybrid" ] && [ "$target_mode" = "Integrated" ]; then
 elif [ "$current" = "Integrated" ] && [ "$target_mode" = "Hybrid" ]; then
   notify-send -u critical -t 15000 \
     "󰍺 GPU Mode Changed" \
-    "Switched to Hybrid mode, logging out in 15 seconds...\n\n⚠️ Reboot recommended after log out."
+    "Switched to Hybrid mode, logging out in 15 seconds..."
+  notify-send -u critical -t 15000 "⚠︎ Reboot Recommended After Log Out"
 else
   notify-send -u normal -t 15000 \
     "󰍺 GPU Mode Changed" \

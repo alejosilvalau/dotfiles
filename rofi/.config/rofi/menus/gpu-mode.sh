@@ -26,16 +26,31 @@ chosen=$(echo "$menu" | $ROFI \
   -format 'i:s')
 
 [ -z "$chosen" ] && exit
-
 echo "$chosen" | grep -q "Close" && exit
 
-label=$(echo "$chosen" | grep -oP '(Integrated|Hybrid)')
-supergfxctl --mode $label
+target_mode=$(echo "$chosen" | grep -oP '(Integrated|Hybrid)')
 
-notify-send -u critical -t 30000 \
-  "󰍺 GPU Mode Changed" \
-  "Switching to $label mode, the system will reboot in 15 seconds"
+# Don't trigger if the user selected the mode they are already on
+[ "$target_mode" = "$current" ] && exit 0
+
+# Apply the mode switch
+supergfxctl --mode "$target_mode"
+
+# Custom notifications based on transition direction
+if [ "$current" = "Hybrid" ] && [ "$target_mode" = "Integrated" ]; then
+  notify-send -u critical -t 15000 \
+    "󰍺 GPU Mode Changed" \
+    "Switched to Integrated mode, logging out in 15 seconds..."
+
+elif [ "$current" = "Integrated" ] && [ "$target_mode" = "Hybrid" ]; then
+  notify-send -u critical -t 15000 \
+    "󰍺 GPU Mode Changed" \
+    "Switched to Hybrid mode, logging out in 15 seconds...\n\n⚠️ Reboot recommended after log out."
+else
+  notify-send -u normal -t 15000 \
+    "󰍺 GPU Mode Changed" \
+    "Switching to $target_mode mode, logging out in 15 seconds..."
+fi
 
 sleep 15
-touch /tmp/reboot-on-logout
 i3-msg exit

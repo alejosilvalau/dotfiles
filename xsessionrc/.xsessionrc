@@ -3,4 +3,4 @@ xinput set-prop 'ASUE120A:00 04F3:319B Touchpad' 'libinput Scrolling Pixel Dista
 
 # Logitech G502 mouse settings
 xinput set-prop "Logitech Gaming Mouse G502" "libinput Accel Profile Enabled" 0 1 0
-xinput set-prop "Logitech Gaming Mouse G502" "libinput Accel Speed" -0.15
+xinput set-prop "Logitech Gaming Mouse G502" "libinput Accel Speed" -0.2

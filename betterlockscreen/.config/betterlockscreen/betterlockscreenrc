@@ -17,4 +17,4 @@ display_on=0
 span_image=false
 image_fill="fill"
 
-fx_list=()
+fx_list=(blur)

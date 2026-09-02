@@ -1,6 +1,8 @@
 #!/bin/bash
 # ~/.config/i3/lockscreen.sh
 
+notify-send -u normal -t 6000 "󰌾 Locking screen" "Screen will lock shortly..."
+
 betterlockscreen -u ~/Pictures/Backgrounds/IMG_20250709_082307_edited.jpg
 
 back_to_black=30

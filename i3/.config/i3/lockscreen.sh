@@ -17,9 +17,9 @@ betterlockscreen -l blur
 if [ "$saved_dpms_enabled" = "Enabled" ]; then
   xset s $saved_timeout $saved_timeout
   xset dpms $saved_timeout $saved_timeout $saved_timeout
-  # notify-send -u normal -t 4000 "󰌾 Screen Unlocked" "Screen timeout restored to $((saved_timeout / 60)) min"
+  notify-send -u normal -t 4000 "󰌾 Screen Unlocked" "Screen timeout restored to $((saved_timeout / 60)) min"
 else
   xset s off
   xset -dpms
-  # notify-send -u normal -t 4000 "󰌾 Screen Unlocked" "Screen timeout has been disabled"
+  notify-send -u normal -t 4000 "󰌾 Screen Unlocked" "Screen timeout has been disabled"
 fi

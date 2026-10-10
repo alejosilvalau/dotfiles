@@ -7,7 +7,7 @@ include ~/.config/i3/theme.conf
 
 # Prevent new windows from stealing focus when on inactive workspace
 # smart = focus only if same workspace, else mark urgent
-focus_on_window_activation smart
+focus_on_window_activation urgent
 
 # General startup applications
 exec --no-startup-id picom
